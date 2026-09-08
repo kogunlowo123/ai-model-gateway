@@ -1,0 +1,221 @@
+[project]
+name = "amg"
+version = "0.1.0"
+description = "A model gateway that treats its routing policy as a fitted model and measures it on held-out traffic."
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "kogunlowo123" }]
+keywords = [
+  "llm",
+  "gateway",
+  "routing",
+  "failover",
+  "cost-optimisation",
+  "discrete-event-simulation",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+  "Typing :: Typed",
+]
+
+# Deliberately small. The measurement path -- workload, upstreams, routing,
+# resilience, replay, statistics -- is standard library only, so the numbers
+# this project publishes do not depend on a third-party release. The HTTP
+# surface is the only thing that needs anything, and it is a hard requirement
+# of being a gateway rather than a library.
+dependencies = [
+  # 0.141 is the first line that resolves starlette >= 1.3.1, which carries the
+  # fixes for PYSEC-2026-161/248/249/2280/2281. pip-audit runs against the
+  # exported lock on every push, so this pin has to move when they do.
+  "fastapi>=0.141.1,<0.142",
+  # Named directly, not left to fastapi. fastapi only asks for
+  # `starlette>=0.46.0`, so a resolver is free to keep an old one -- and did,
+  # holding 0.50.0 with five known advisories against it. pip-audit runs on
+  # every push, so this floor moves when the next one lands.
+  "starlette>=1.3.1,<2",
+  "pydantic>=2.12,<3",
+  "pydantic-settings>=2.12,<3",
+  "uvicorn[standard]>=0.40,<0.41",
+]
+
+[project.optional-dependencies]
+# The real, credential-free upstream. Optional because CI has no model server
+# and a dependency that only one machine can exercise should not be installed
+# on the machines that cannot.
+ollama = ["httpx>=0.28,<0.29"]
+
+[project.urls]
+Homepage = "https://github.com/kogunlowo123/ai-model-gateway"
+Documentation = "https://kogunlowo123.github.io/ai-model-gateway/"
+Repository = "https://github.com/kogunlowo123/ai-model-gateway"
+Changelog = "https://github.com/kogunlowo123/ai-model-gateway/blob/main/CHANGELOG.md"
+
+[project.scripts]
+amg = "amg.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.32.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/amg"]
+
+[dependency-groups]
+dev = [
+  "pytest>=9.1,<10",
+  "pytest-cov>=7.0,<8",
+  "pytest-randomly>=4.0,<5",
+  "httpx>=0.28,<0.29",
+  # starlette 1.6 deprecated driving TestClient with httpx 0.x and raises on
+  # it, and this project turns warnings into errors. Both are here because
+  # `amg.upstream.ollama` still speaks httpx 0.x.
+  "httpx2>=2.12,<3",
+  "ruff>=0.16.6,<0.17",
+  "mypy>=1.19,<2",
+  "bandit[toml]>=1.9.4,<2",
+  "pip-audit>=2.9,<3",
+]
+docs = [
+  "markdown-it-py>=4.0,<5",
+  "mdit-py-plugins>=0.5,<1",
+  "pygments>=2.19,<3",
+  "types-Pygments>=2.19,<3",
+]
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+addopts = [
+  "--strict-markers",
+  "--strict-config",
+  "-ra",
+]
+markers = [
+  "unit: pure logic, no I/O and no network",
+  "integration: several components wired together against real temporary files",
+  "security: adversarial cases; a failure here is a security regression",
+  "e2e: the command line and the HTTP surface driven as real processes",
+  "meta: the gate's own negative controls",
+  "ollama: needs a local model server; skipped everywhere else",
+]
+# An unraised warning is a defect that has not been noticed yet, so warnings are
+# errors -- with one narrow exception, matched on its exact message rather than
+# by silencing a whole category.
+filterwarnings = [
+  "error",
+  # starlette's TestClient imports `anyio.abc.BlockingPortal` at module import
+  # time, and anyio deprecated that alias. It is neither ours to fix nor
+  # avoidable while using the test client, and the filter names the one message
+  # so a *different* anyio deprecation still fails the build.
+  "ignore:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+]
+
+[tool.coverage.run]
+source = ["src/amg"]
+branch = true
+omit = ["src/amg/upstream/ollama.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+  "@overload",
+]
+show_missing = true
+skip_covered = false
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unreachable = true
+warn_unused_configs = true
+disallow_any_generics = true
+no_implicit_reexport = true
+show_error_codes = true
+files = ["src", "tests", "examples", "scripts", "tasks.py"]
+# `tests/` and `examples/` are deliberately not packages: adding __init__.py
+# would make "tests" importable, which nothing wants. Without an explicit base
+# mypy names their modules by bare filename, the `tests.*` override below never
+# matches, and every test function is reported as missing an annotation with no
+# clue beyond `warn_unused_configs` printing "unused section(s)".
+namespace_packages = true
+explicit_package_bases = true
+mypy_path = "src,."
+
+[[tool.mypy.overrides]]
+# A test signature is `def test_x(self, fixture):`, and annotating fixtures
+# restates what conftest already declares. The bodies are still checked.
+module = ["tests.*", "examples.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "A", "ARG", "ASYNC", "B", "BLE", "C4", "C90", "D", "DTZ", "E", "EM", "ERA",
+  "F", "FBT", "FLY", "G", "I", "ICN", "INP", "ISC", "LOG", "N", "PERF", "PGH",
+  "PIE", "PL", "PT", "PTH", "PYI", "Q", "RET", "RSE", "RUF", "S", "SIM", "SLF",
+  "SLOT", "T10", "T20", "TC", "TID", "TRY", "UP", "W", "YTT",
+]
+ignore = [
+  "D107",
+  "D105",
+  "ISC001",
+  "TRY003", "EM101", "EM102",
+  "D400", "D401", "D415",
+  "TC001", "TC003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = [
+  "D",
+  "PLR2004",
+  "S101",
+  "S105", "S106",
+  "S311",
+  "S603",
+  "SLF001",
+  "ARG001", "ARG002", "ARG005",
+  "PLC0415",
+  "RUF012",
+  "FBT003",
+  "PIE808",
+  "FLY002",
+  "PLR0913",
+  "N803", "N806",
+  # The test directories are deliberately not packages. pytest finds them via
+  # rootdir, and adding __init__.py would make "tests" importable.
+  "INP001",
+]
+"src/amg/cli.py" = ["T201"]
+"src/amg/api/app.py" = [
+  # FastAPI dependency injection puts every dependency in the signature, which
+  # PLR0917 counts as a positional argument.
+  "PLR0917",
+]
+"examples/**" = ["D", "T201", "INP001", "E402", "PLR2004", "PLC0415"]
+"scripts/**" = ["D", "T201", "INP001", "E402", "S101"]
+# The task runner is a standard-library shell wrapper. Printing the command it
+# is about to run is the entire user interface, and every argv it builds is a
+# literal from the table above it.
+"tasks.py" = ["D", "T201", "S603", "S607"]
+"tasks_local.py" = ["D", "T201", "S603", "S607"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 12
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv", "var"]

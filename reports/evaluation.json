@@ -1,0 +1,1388 @@
+{
+  "blend_shares": [
+    8847,
+    625
+  ],
+  "estimator": {
+    "converged": true,
+    "fitted_on": "sha256:9cf9a12cd276807d880c959756daa8a9f8a5e89bd248fe1a00cc11d2898fb777",
+    "iterations": 6,
+    "target": "nano_answers_correctly"
+  },
+  "optimism_gap": 0.004583333333333384,
+  "resilience": {
+    "arrival_rate": 40,
+    "breaker_harm_during_partial_outage": -0.38708333333333333,
+    "breaker_under_total_outage": {
+      "provisioned": 0.99625,
+      "under_provisioned": 0.21
+    },
+    "measurements": [
+      {
+        "answered": 0.99875,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0704166666666666,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.07125,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.07125,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.98125,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1591666666666667,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 1000,
+        "p99_latency_us": 2128168,
+        "peak_queue_depth": 8
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1904166666666667,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 1000,
+        "p99_latency_us": 2643834,
+        "peak_queue_depth": 5
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1904166666666667,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 1000,
+        "p99_latency_us": 2643834,
+        "peak_queue_depth": 5
+      },
+      {
+        "answered": 0.9470833333333334,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.2458333333333333,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 2000,
+        "p99_latency_us": 4519202,
+        "peak_queue_depth": 76
+      },
+      {
+        "answered": 0.9945833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.3204166666666666,
+        "concurrency": 24,
+        "expired": 1,
+        "fault": "flaky",
+        "level": 2000,
+        "p99_latency_us": 3356283,
+        "peak_queue_depth": 17
+      },
+      {
+        "answered": 0.9945833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.3204166666666666,
+        "concurrency": 24,
+        "expired": 1,
+        "fault": "flaky",
+        "level": 2000,
+        "p99_latency_us": 3356283,
+        "peak_queue_depth": 17
+      },
+      {
+        "answered": 0.6033333333333334,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.42875,
+        "concurrency": 24,
+        "expired": 809,
+        "fault": "flaky",
+        "level": 4000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 167
+      },
+      {
+        "answered": 0.8383333333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.6270833333333334,
+        "concurrency": 24,
+        "expired": 317,
+        "fault": "flaky",
+        "level": 4000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 130
+      },
+      {
+        "answered": 0.83625,
+        "arm": "retry+breaker",
+        "breaker_rejections": 139,
+        "calls_per_request": 1.5895833333333333,
+        "concurrency": 24,
+        "expired": 247,
+        "fault": "flaky",
+        "level": 4000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 126
+      },
+      {
+        "answered": 0.3958333333333333,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.60625,
+        "concurrency": 24,
+        "expired": 1330,
+        "fault": "flaky",
+        "level": 6000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 194
+      },
+      {
+        "answered": 0.6166666666666667,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.9683333333333333,
+        "concurrency": 24,
+        "expired": 828,
+        "fault": "flaky",
+        "level": 6000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 164
+      },
+      {
+        "answered": 0.5720833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 710,
+        "calls_per_request": 1.6079166666666667,
+        "concurrency": 24,
+        "expired": 651,
+        "fault": "flaky",
+        "level": 6000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 189
+      },
+      {
+        "answered": 0.9983333333333333,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0754166666666667,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "outage",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 1
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0770833333333334,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "outage",
+        "level": 0,
+        "p99_latency_us": 1947809,
+        "peak_queue_depth": 1
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0770833333333334,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "outage",
+        "level": 0,
+        "p99_latency_us": 1947809,
+        "peak_queue_depth": 1
+      },
+      {
+        "answered": 0.99625,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1266666666666667,
+        "concurrency": 24,
+        "expired": 0,
+        "fault": "outage",
+        "level": 1000,
+        "p99_latency_us": 3784417,
+        "peak_queue_depth": 64
+      },
+      {
+        "answered": 0.9983333333333333,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1733333333333333,
+        "concurrency": 24,
+        "expired": 3,
+        "fault": "outage",
+        "level": 1000,
+        "p99_latency_us": 3873801,
+        "peak_queue_depth": 74
+      },
+      {
+        "answered": 0.7441666666666666,
+        "arm": "retry+breaker",
+        "breaker_rejections": 985,
+        "calls_per_request": 1.0383333333333333,
+        "concurrency": 24,
+        "expired": 537,
+        "fault": "outage",
+        "level": 1000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 236
+      },
+      {
+        "answered": 0.9575,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1995833333333332,
+        "concurrency": 24,
+        "expired": 72,
+        "fault": "outage",
+        "level": 2500,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 173
+      },
+      {
+        "answered": 0.95625,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.3275,
+        "concurrency": 24,
+        "expired": 78,
+        "fault": "outage",
+        "level": 2500,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 160
+      },
+      {
+        "answered": 0.7441666666666666,
+        "arm": "retry+breaker",
+        "breaker_rejections": 985,
+        "calls_per_request": 1.0383333333333333,
+        "concurrency": 24,
+        "expired": 537,
+        "fault": "outage",
+        "level": 2500,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 236
+      },
+      {
+        "answered": 0.71,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.42125,
+        "concurrency": 24,
+        "expired": 668,
+        "fault": "outage",
+        "level": 5000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 240
+      },
+      {
+        "answered": 0.79625,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.55625,
+        "concurrency": 24,
+        "expired": 464,
+        "fault": "outage",
+        "level": 5000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 276
+      },
+      {
+        "answered": 0.4091666666666667,
+        "arm": "retry+breaker",
+        "breaker_rejections": 2409,
+        "calls_per_request": 0.775,
+        "concurrency": 24,
+        "expired": 767,
+        "fault": "outage",
+        "level": 5000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 235
+      },
+      {
+        "answered": 0.035416666666666666,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.98125,
+        "concurrency": 24,
+        "expired": 2312,
+        "fault": "outage",
+        "level": 10000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 241
+      },
+      {
+        "answered": 0.02125,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 2.4875,
+        "concurrency": 24,
+        "expired": 2349,
+        "fault": "outage",
+        "level": 10000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 295
+      },
+      {
+        "answered": 0.21,
+        "arm": "retry+breaker",
+        "breaker_rejections": 3520,
+        "calls_per_request": 0.5454166666666667,
+        "concurrency": 24,
+        "expired": 772,
+        "fault": "outage",
+        "level": 10000,
+        "p99_latency_us": 6000000,
+        "peak_queue_depth": 239
+      },
+      {
+        "answered": 0.99875,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0704166666666666,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.07125,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.07125,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.98125,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1591666666666667,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 1000,
+        "p99_latency_us": 2109836,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1904166666666667,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 1000,
+        "p99_latency_us": 2643834,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.1904166666666667,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 1000,
+        "p99_latency_us": 2643834,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9470833333333334,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.2458333333333333,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 2000,
+        "p99_latency_us": 2171636,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9945833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.3204166666666666,
+        "concurrency": 96,
+        "expired": 1,
+        "fault": "flaky",
+        "level": 2000,
+        "p99_latency_us": 3304989,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9945833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.3204166666666666,
+        "concurrency": 96,
+        "expired": 1,
+        "fault": "flaky",
+        "level": 2000,
+        "p99_latency_us": 3304989,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.8225,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.4354166666666666,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 4000,
+        "p99_latency_us": 2629211,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9654166666666667,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.71,
+        "concurrency": 96,
+        "expired": 4,
+        "fault": "flaky",
+        "level": 4000,
+        "p99_latency_us": 4115187,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9633333333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 48,
+        "calls_per_request": 1.7008333333333334,
+        "concurrency": 96,
+        "expired": 4,
+        "fault": "flaky",
+        "level": 4000,
+        "p99_latency_us": 4246095,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.62375,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.6204166666666666,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "flaky",
+        "level": 6000,
+        "p99_latency_us": 3176875,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.8566666666666667,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 2.24625,
+        "concurrency": 96,
+        "expired": 9,
+        "fault": "flaky",
+        "level": 6000,
+        "p99_latency_us": 5127584,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.8104166666666667,
+        "arm": "retry+breaker",
+        "breaker_rejections": 461,
+        "calls_per_request": 2.0925,
+        "concurrency": 96,
+        "expired": 7,
+        "fault": "flaky",
+        "level": 6000,
+        "p99_latency_us": 5027463,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9983333333333333,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0754166666666667,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 0,
+        "p99_latency_us": 1946145,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0770833333333334,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 0,
+        "p99_latency_us": 1947809,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9995833333333334,
+        "arm": "retry+breaker",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.0770833333333334,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 0,
+        "p99_latency_us": 1947809,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9954166666666666,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.16625,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 1000,
+        "p99_latency_us": 2128807,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.99875,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.2570833333333333,
+        "concurrency": 96,
+        "expired": 1,
+        "fault": "outage",
+        "level": 1000,
+        "p99_latency_us": 2353607,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.99875,
+        "arm": "retry+breaker",
+        "breaker_rejections": 381,
+        "calls_per_request": 1.0920833333333333,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 1000,
+        "p99_latency_us": 2056046,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9925,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.3041666666666667,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 2500,
+        "p99_latency_us": 2779099,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9966666666666667,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.5429166666666667,
+        "concurrency": 96,
+        "expired": 4,
+        "fault": "outage",
+        "level": 2500,
+        "p99_latency_us": 3295120,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9975,
+        "arm": "retry+breaker",
+        "breaker_rejections": 824,
+        "calls_per_request": 1.0825,
+        "concurrency": 96,
+        "expired": 1,
+        "fault": "outage",
+        "level": 2500,
+        "p99_latency_us": 2560417,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9883333333333333,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 1.5429166666666667,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 5000,
+        "p99_latency_us": 3480099,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9945833333333334,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 2.04375,
+        "concurrency": 96,
+        "expired": 8,
+        "fault": "outage",
+        "level": 5000,
+        "p99_latency_us": 3870995,
+        "peak_queue_depth": 1
+      },
+      {
+        "answered": 0.9970833333333333,
+        "arm": "retry+breaker",
+        "breaker_rejections": 1382,
+        "calls_per_request": 1.0725,
+        "concurrency": 96,
+        "expired": 1,
+        "fault": "outage",
+        "level": 5000,
+        "p99_latency_us": 3480998,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.98,
+        "arm": "single",
+        "breaker_rejections": 0,
+        "calls_per_request": 2.0,
+        "concurrency": 96,
+        "expired": 0,
+        "fault": "outage",
+        "level": 10000,
+        "p99_latency_us": 4198335,
+        "peak_queue_depth": 0
+      },
+      {
+        "answered": 0.9925,
+        "arm": "retry",
+        "breaker_rejections": 0,
+        "calls_per_request": 3.0166666666666666,
+        "concurrency": 96,
+        "expired": 10,
+        "fault": "outage",
+        "level": 10000,
+        "p99_latency_us": 5805605,
+        "peak_queue_depth": 1
+      },
+      {
+        "answered": 0.99625,
+        "arm": "retry+breaker",
+        "breaker_rejections": 2397,
+        "calls_per_request": 1.0354166666666667,
+        "concurrency": 96,
+        "expired": 1,
+        "fault": "outage",
+        "level": 10000,
+        "p99_latency_us": 5306943,
+        "peak_queue_depth": 0
+      }
+    ],
+    "policy": "cascade"
+  },
+  "thresholds": {
+    "budget_multiple": 3,
+    "calibrated_on": "sha256:9cf9a12cd276807d880c959756daa8a9f8a5e89bd248fe1a00cc11d2898fb777",
+    "high": 779933,
+    "low": -2676792
+  },
+  "workloads": [
+    {
+      "budget_multiple_realised": 2.761000003582188,
+      "cost_difference_ci": [
+        -145.81875,
+        101.02291666666666
+      ],
+      "digest": "sha256:9cf9a12cd276807d880c959756daa8a9f8a5e89bd248fe1a00cc11d2898fb777",
+      "dominated_by": {
+        "best": [],
+        "blend": [
+          "fitted"
+        ],
+        "cascade": [
+          "fitted"
+        ],
+        "cheapest": [],
+        "fitted": []
+      },
+      "fitted_versus_null": {
+        "difference": 0.08,
+        "losses": 154,
+        "p_value": 1.0227092042854172e-50,
+        "ties": 4108,
+        "wins": 538
+      },
+      "hard_share": 0.30041666666666667,
+      "policies": {
+        "best": {
+          "answered": 0.9977083333333333,
+          "answered_but_wrong": 0.04125000000000001,
+          "calls": 4890,
+          "correctness": 0.9564583333333333,
+          "correctness_ci": [
+            0.9503109441278395,
+            0.961875695994074
+          ],
+          "cost_per_request": 17718.25,
+          "cost_total": 85047600,
+          "digest": "sha256:97b18d790738c4c5774df022a1715113709d6e110875cf4b194dc7cd0b780bed",
+          "escalations": 0,
+          "p95_latency_us": 1829502
+        },
+        "blend": {
+          "answered": 0.9404166666666667,
+          "answered_but_wrong": 0.20625000000000004,
+          "calls": 4823,
+          "correctness": 0.7341666666666666,
+          "correctness_ci": [
+            0.7214853231864251,
+            0.7464735008651635
+          ],
+          "cost_per_request": 1623.7770833333334,
+          "cost_total": 7794130,
+          "digest": "sha256:61a2c35badb40d1da354de0877ef3d0e7230014f621893b9d55b0537285d97cc",
+          "escalations": 0,
+          "p95_latency_us": 1302793
+        },
+        "cascade": {
+          "answered": 0.99875,
+          "answered_but_wrong": 0.22916666666666674,
+          "calls": 5137,
+          "correctness": 0.7695833333333333,
+          "correctness_ci": [
+            0.7574578142058916,
+            0.7812777003161329
+          ],
+          "cost_per_request": 1846.51875,
+          "cost_total": 8863290,
+          "digest": "sha256:b30a5642ce69dbcf0c09f5ccd616d7c459233cb47e4c02f5c67dc7f8c725993c",
+          "escalations": 310,
+          "p95_latency_us": 1609308
+        },
+        "cheapest": {
+          "answered": 0.9354166666666667,
+          "answered_but_wrong": 0.22458333333333336,
+          "calls": 4821,
+          "correctness": 0.7108333333333333,
+          "correctness_ci": [
+            0.6978429282271253,
+            0.7234865468086465
+          ],
+          "cost_per_request": 581.58125,
+          "cost_total": 2791590,
+          "digest": "sha256:a3f8d34ebb12f0d6668f214c28520e1c2971e9a5cfe4fdd34bb392de74b631f2",
+          "escalations": 0,
+          "p95_latency_us": 315148
+        },
+        "fitted": {
+          "answered": 0.9625,
+          "answered_but_wrong": 0.14833333333333332,
+          "calls": 4825,
+          "correctness": 0.8141666666666667,
+          "correctness_ci": [
+            0.8029130884697042,
+            0.8249177893503987
+          ],
+          "cost_per_request": 1605.7458333333334,
+          "cost_total": 7707580,
+          "digest": "sha256:036993e996abd5e86f83278f2126f607936f7c2ecbe172f265d1768e726c670c",
+          "escalations": 0,
+          "p95_latency_us": 655572
+        }
+      },
+      "size": 4800,
+      "spend_versus_null": 0.9888954892977151,
+      "workload": "fit"
+    },
+    {
+      "budget_multiple_realised": 2.7168305594862696,
+      "cost_difference_ci": [
+        -335.225,
+        20.725
+      ],
+      "digest": "sha256:ca16909f3d5fee513579b177df8ac638ac03dc80aca6b9d79454aa1d59e0ba00",
+      "dominated_by": {
+        "best": [],
+        "blend": [
+          "fitted"
+        ],
+        "cascade": [
+          "fitted"
+        ],
+        "cheapest": [],
+        "fitted": []
+      },
+      "fitted_versus_null": {
+        "difference": 0.07833333333333334,
+        "losses": 82,
+        "p_value": 1.5027982310468964e-24,
+        "ties": 2048,
+        "wins": 270
+      },
+      "hard_share": 0.31083333333333335,
+      "policies": {
+        "best": {
+          "answered": 0.995,
+          "answered_but_wrong": 0.03416666666666668,
+          "calls": 2457,
+          "correctness": 0.9608333333333333,
+          "correctness_ci": [
+            0.9523070864174544,
+            0.9678867108412007
+          ],
+          "cost_per_request": 17738.625,
+          "cost_total": 42572700,
+          "digest": "sha256:606768efa88561eec65ac5a1bc02a3af916ecd6a9db6fd23f95234dfd4abe0c1",
+          "escalations": 0,
+          "p95_latency_us": 1840782
+        },
+        "blend": {
+          "answered": 0.9358333333333333,
+          "answered_but_wrong": 0.20458333333333334,
+          "calls": 2415,
+          "correctness": 0.73125,
+          "correctness_ci": [
+            0.713155021637132,
+            0.7486058802422112
+          ],
+          "cost_per_request": 1740.875,
+          "cost_total": 4178100,
+          "digest": "sha256:348bfbcb76e92fbf52fa72d85fe91a3722a0d1502fad9b4205d66fdb91ce33c5",
+          "escalations": 0,
+          "p95_latency_us": 1331659
+        },
+        "cascade": {
+          "answered": 0.9995833333333334,
+          "answered_but_wrong": 0.22583333333333333,
+          "calls": 2585,
+          "correctness": 0.77375,
+          "correctness_ci": [
+            0.7565809019104762,
+            0.7900441657196654
+          ],
+          "cost_per_request": 1915.1958333333334,
+          "cost_total": 4596470,
+          "digest": "sha256:61a4e63f7aa2be5dbc4a0c228ebf70224adeba1ee17f95e9a7ea6c0e16765b5a",
+          "escalations": 169,
+          "p95_latency_us": 1616439
+        },
+        "cheapest": {
+          "answered": 0.9295833333333333,
+          "answered_but_wrong": 0.22124999999999995,
+          "calls": 2413,
+          "correctness": 0.7083333333333334,
+          "correctness_ci": [
+            0.6898272521648532,
+            0.7261735603390598
+          ],
+          "cost_per_request": 580.0708333333333,
+          "cost_total": 1392170,
+          "digest": "sha256:0323a328e2d9d7c9a4c73fc44a05bc6091c71717b84e8a88d2137edd55e7581e",
+          "escalations": 0,
+          "p95_latency_us": 317314
+        },
+        "fitted": {
+          "answered": 0.9670833333333333,
+          "answered_but_wrong": 0.15749999999999997,
+          "calls": 2411,
+          "correctness": 0.8095833333333333,
+          "correctness_ci": [
+            0.7933851899495673,
+            0.8247920174312472
+          ],
+          "cost_per_request": 1575.9541666666667,
+          "cost_total": 3782290,
+          "digest": "sha256:fc2b0f316fb23a97f9f00b57cb076da95111945aee078a38027b575b4ba94605",
+          "escalations": 0,
+          "p95_latency_us": 655241
+        }
+      },
+      "size": 2400,
+      "spend_versus_null": 0.9052655513271582,
+      "workload": "control"
+    },
+    {
+      "budget_multiple_realised": 1.869655876023026,
+      "cost_difference_ci": [
+        -606.4208333333333,
+        -300.29583333333335
+      ],
+      "digest": "sha256:c461b894147b5f20c23f9163ed1155477a0bff462b07a02be6d7588f3cd34131",
+      "dominated_by": {
+        "best": [],
+        "blend": [
+          "cascade",
+          "fitted"
+        ],
+        "cascade": [],
+        "cheapest": [],
+        "fitted": []
+      },
+      "fitted_versus_null": {
+        "difference": 0.020833333333333332,
+        "losses": 53,
+        "p_value": 7.671768672595144e-05,
+        "ties": 2244,
+        "wins": 103
+      },
+      "hard_share": 0.09458333333333334,
+      "policies": {
+        "best": {
+          "answered": 0.9979166666666667,
+          "answered_but_wrong": 0.016249999999999987,
+          "calls": 2451,
+          "correctness": 0.9816666666666667,
+          "correctness_ci": [
+            0.9754791037926237,
+            0.9863147747164228
+          ],
+          "cost_per_request": 17123.75,
+          "cost_total": 41097000,
+          "digest": "sha256:60cb854eca3a3466a54a90bdb38293a048c8b575368a499796fc4b100d74331a",
+          "escalations": 0,
+          "p95_latency_us": 1862180
+        },
+        "blend": {
+          "answered": 0.9654166666666667,
+          "answered_but_wrong": 0.12750000000000006,
+          "calls": 2406,
+          "correctness": 0.8379166666666666,
+          "correctness_ci": [
+            0.8226346612722942,
+            0.8521186566090523
+          ],
+          "cost_per_request": 1500.7333333333333,
+          "cost_total": 3601760,
+          "digest": "sha256:90ae970c515510124904413107e92f9f5c3ef062bdb5159a30054caf28611aef",
+          "escalations": 0,
+          "p95_latency_us": 1321535
+        },
+        "cascade": {
+          "answered": 0.9995833333333334,
+          "answered_but_wrong": 0.1379166666666667,
+          "calls": 2499,
+          "correctness": 0.8616666666666667,
+          "correctness_ci": [
+            0.8472750468224057,
+            0.8749023636843871
+          ],
+          "cost_per_request": 1248.7625,
+          "cost_total": 2997030,
+          "digest": "sha256:66557fb98b4ae1d8b86dacb1613ae79b62ba86fd1a21454d76842ed871177621",
+          "escalations": 95,
+          "p95_latency_us": 1408586
+        },
+        "cheapest": {
+          "answered": 0.9604166666666667,
+          "answered_but_wrong": 0.13624999999999998,
+          "calls": 2404,
+          "correctness": 0.8241666666666667,
+          "correctness_ci": [
+            0.8084219671014525,
+            0.838875297154636
+          ],
+          "cost_per_request": 559.5125,
+          "cost_total": 1342830,
+          "digest": "sha256:21a5d60c0b6e66e71ce75b8e228c2c313b13423bd9555b6de4d5ffce6c54c4ca",
+          "escalations": 0,
+          "p95_latency_us": 314754
+        },
+        "fitted": {
+          "answered": 0.9679166666666666,
+          "answered_but_wrong": 0.10916666666666663,
+          "calls": 2404,
+          "correctness": 0.85875,
+          "correctness_ci": [
+            0.8442422228876602,
+            0.8721111762440777
+          ],
+          "cost_per_request": 1046.0958333333333,
+          "cost_total": 2510630,
+          "digest": "sha256:9c5d045f7e9f8599e39e1fc9ed6d3a6b3b277ef3c55d9ee0ab61bb0a084bd0a1",
+          "escalations": 0,
+          "p95_latency_us": 605600
+        }
+      },
+      "size": 2400,
+      "spend_versus_null": 0.6970564390742304,
+      "workload": "shift-10"
+    },
+    {
+      "budget_multiple_realised": 3.620921331798705,
+      "cost_difference_ci": [
+        295.02916666666664,
+        652.2666666666667
+      ],
+      "digest": "sha256:4de229a604509b9ebf5fb770e51f12f7179a66acd0d493b9d336324230634756",
+      "dominated_by": {
+        "best": [],
+        "blend": [],
+        "cascade": [
+          "fitted"
+        ],
+        "cheapest": [],
+        "fitted": []
+      },
+      "fitted_versus_null": {
+        "difference": 0.13583333333333333,
+        "losses": 116,
+        "p_value": 8.803063102537466e-46,
+        "ties": 1842,
+        "wins": 442
+      },
+      "hard_share": 0.49583333333333335,
+      "policies": {
+        "best": {
+          "answered": 0.99375,
+          "answered_but_wrong": 0.0625,
+          "calls": 2438,
+          "correctness": 0.93125,
+          "correctness_ci": [
+            0.9204224192742745,
+            0.9406992626088253
+          ],
+          "cost_per_request": 18243.375,
+          "cost_total": 43784100,
+          "digest": "sha256:f843e8696f805c91570ca779707b9aa0e935635cc75e8c4d19efefd6550ef34b",
+          "escalations": 0,
+          "p95_latency_us": 1847240
+        },
+        "blend": {
+          "answered": 0.9058333333333334,
+          "answered_but_wrong": 0.27833333333333343,
+          "calls": 2416,
+          "correctness": 0.6275,
+          "correctness_ci": [
+            0.6079681418354441,
+            0.6466243554169504
+          ],
+          "cost_per_request": 1699.9583333333333,
+          "cost_total": 4079900,
+          "digest": "sha256:c4900f4644f1a0dde9e4ae15b67799841dafff2aff6dc04caeafd6e43cb6ff60",
+          "escalations": 0,
+          "p95_latency_us": 1404521
+        },
+        "cascade": {
+          "answered": 1.0,
+          "answered_but_wrong": 0.3079166666666666,
+          "calls": 2664,
+          "correctness": 0.6920833333333334,
+          "correctness_ci": [
+            0.6733198023531084,
+            0.7102329467754993
+          ],
+          "cost_per_request": 2657.0666666666666,
+          "cost_total": 6376960,
+          "digest": "sha256:a0741f248ff2257c2a14c78c2e0fc28f294ee63ee2d113abc28177f33502ef9d",
+          "escalations": 248,
+          "p95_latency_us": 1689453
+        },
+        "cheapest": {
+          "answered": 0.8966666666666666,
+          "answered_but_wrong": 0.29833333333333323,
+          "calls": 2413,
+          "correctness": 0.5983333333333334,
+          "correctness_ci": [
+            0.5785781067545379,
+            0.6177742767473091
+          ],
+          "cost_per_request": 600.9416666666667,
+          "cost_total": 1442260,
+          "digest": "sha256:45d6b91d148050bd3c814c679b7b478bcbaf437cac37dc3684fbd377c578b473",
+          "escalations": 0,
+          "p95_latency_us": 320650
+        },
+        "fitted": {
+          "answered": 0.95875,
+          "answered_but_wrong": 0.19541666666666668,
+          "calls": 2413,
+          "correctness": 0.7633333333333333,
+          "correctness_ci": [
+            0.7459162286675721,
+            0.7799087983373737
+          ],
+          "cost_per_request": 2175.9625,
+          "cost_total": 5222310,
+          "digest": "sha256:e98246f98c49d9d27f3af534c66dabc18e3d5199d26c6a132a9863816e9b40e2",
+          "escalations": 0,
+          "p95_latency_us": 678923
+        }
+      },
+      "size": 2400,
+      "spend_versus_null": 1.2800093139537734,
+      "workload": "shift-50"
+    },
+    {
+      "budget_multiple_realised": 4.326331032160296,
+      "cost_difference_ci": [
+        683.0208333333334,
+        1060.8416666666667
+      ],
+      "digest": "sha256:308ee3228acd6abc23eaf3ff63a1c167aec8148ff4ab08ccd5b1ee32ce97b780",
+      "dominated_by": {
+        "best": [],
+        "blend": [],
+        "cascade": [
+          "fitted"
+        ],
+        "cheapest": [],
+        "fitted": []
+      },
+      "fitted_versus_null": {
+        "difference": 0.15666666666666668,
+        "losses": 173,
+        "p_value": 2.0821764283087547e-46,
+        "ties": 1678,
+        "wins": 549
+      },
+      "hard_share": 0.69125,
+      "policies": {
+        "best": {
+          "answered": 0.9925,
+          "answered_but_wrong": 0.07708333333333339,
+          "calls": 2445,
+          "correctness": 0.9154166666666667,
+          "correctness_ci": [
+            0.9036093766991208,
+            0.9258962434336814
+          ],
+          "cost_per_request": 18840.5,
+          "cost_total": 45217200,
+          "digest": "sha256:f8ef30e4f140779e16b014074ac400f10779751a4cd6a2ee484768883129c757",
+          "escalations": 0,
+          "p95_latency_us": 1832337
+        },
+        "blend": {
+          "answered": 0.8770833333333333,
+          "answered_but_wrong": 0.35416666666666663,
+          "calls": 2410,
+          "correctness": 0.5229166666666667,
+          "correctness_ci": [
+            0.5029132075536745,
+            0.5428468818217559
+          ],
+          "cost_per_request": 1800.6833333333334,
+          "cost_total": 4321640,
+          "digest": "sha256:09fc79104b1a4558f0ac15e54c0dec300ffc593b9bbf484959cda73aadc591cd",
+          "escalations": 0,
+          "p95_latency_us": 1343361
+        },
+        "cascade": {
+          "answered": 0.9970833333333333,
+          "answered_but_wrong": 0.3979166666666667,
+          "calls": 2735,
+          "correctness": 0.5991666666666666,
+          "correctness_ci": [
+            0.5794168089573094,
+            0.6185995777945531
+          ],
+          "cost_per_request": 3250.5208333333335,
+          "cost_total": 7801250,
+          "digest": "sha256:5391a96419902339c26e229872c29a3eb6ccdaa5fcc10e6f9952baa565d90562",
+          "escalations": 323,
+          "p95_latency_us": 1804721
+        },
+        "cheapest": {
+          "answered": 0.8654166666666666,
+          "answered_but_wrong": 0.3829166666666666,
+          "calls": 2407,
+          "correctness": 0.4825,
+          "correctness_ci": [
+            0.4625523838574625,
+            0.5025035478922087
+          ],
+          "cost_per_request": 618.6458333333334,
+          "cost_total": 1484750,
+          "digest": "sha256:f0ed4b73d1bc3606dc5533930c3765f347c9bb5b2067419ae3c5671e93268011",
+          "escalations": 0,
+          "p95_latency_us": 316635
+        },
+        "fitted": {
+          "answered": 0.9441666666666667,
+          "answered_but_wrong": 0.2645833333333334,
+          "calls": 2408,
+          "correctness": 0.6795833333333333,
+          "correctness_ci": [
+            0.6606400518601793,
+            0.6979526485181936
+          ],
+          "cost_per_request": 2676.4666666666667,
+          "cost_total": 6423520,
+          "digest": "sha256:ec8ac0e48060cca3b4501435a48763b602a2214b3b02884325f0e89a21ab4033",
+          "escalations": 0,
+          "p95_latency_us": 688140
+        }
+      },
+      "size": 2400,
+      "spend_versus_null": 1.486361658999824,
+      "workload": "shift-70"
+    },
+    {
+      "budget_multiple_realised": 5.09699714943965,
+      "cost_difference_ci": [
+        1100.7083333333333,
+        1514.575
+      ],
+      "digest": "sha256:e8b1cbf56a85d8d1f073b379d410bdb97e91812da3060edcef5f7bf203af7c6f",
+      "dominated_by": {
+        "best": [],
+        "blend": [],
+        "cascade": [
+          "fitted"
+        ],
+        "cheapest": [],
+        "fitted": []
+      },
+      "fitted_versus_null": {
+        "difference": 0.25083333333333335,
+        "losses": 191,
+        "p_value": 1.0470291922651772e-87,
+        "ties": 1416,
+        "wins": 793
+      },
+      "hard_share": 0.9145833333333333,
+      "policies": {
+        "best": {
+          "answered": 0.9879166666666667,
+          "answered_but_wrong": 0.0970833333333333,
+          "calls": 2450,
+          "correctness": 0.8908333333333334,
+          "correctness_ci": [
+            0.8777268015046541,
+            0.9026907227526865
+          ],
+          "cost_per_request": 19515.75,
+          "cost_total": 46837800,
+          "digest": "sha256:50fa44ae09217af5f8e008c8954f4fad52f54e32516c27be1fb6f1b28739d6e4",
+          "escalations": 0,
+          "p95_latency_us": 1827701
+        },
+        "blend": {
+          "answered": 0.8416666666666667,
+          "answered_but_wrong": 0.44083333333333335,
+          "calls": 2412,
+          "correctness": 0.4008333333333333,
+          "correctness_ci": [
+            0.3814004222054469,
+            0.4205831910426906
+          ],
+          "cost_per_request": 1950.45,
+          "cost_total": 4681080,
+          "digest": "sha256:87b23721ef29f054c0271534a736a81403e7848d126af8edf4412654ce191333",
+          "escalations": 0,
+          "p95_latency_us": 1297140
+        },
+        "cascade": {
+          "answered": 0.9991666666666666,
+          "answered_but_wrong": 0.4933333333333333,
+          "calls": 2843,
+          "correctness": 0.5058333333333334,
+          "correctness_ci": [
+            0.48583756080319945,
+            0.5258104619469102
+          ],
+          "cost_per_request": 4051.475,
+          "cost_total": 9723540,
+          "digest": "sha256:83a2d3bceb949f2939dee739c409b05b9fdfd39d27761893618431f4348122fd",
+          "escalations": 423,
+          "p95_latency_us": 1821108
+        },
+        "cheapest": {
+          "answered": 0.82375,
+          "answered_but_wrong": 0.4716666666666666,
+          "calls": 2411,
+          "correctness": 0.35208333333333336,
+          "correctness_ci": [
+            0.3332251025629303,
+            0.37141432055929163
+          ],
+          "cost_per_request": 640.225,
+          "cost_total": 1536540,
+          "digest": "sha256:2a7c3f6ab378a0ce1a24a1daa2bd8877c7cd35828a68225e0eeb4644e6b4f216",
+          "escalations": 0,
+          "p95_latency_us": 314628
+        },
+        "fitted": {
+          "answered": 0.9320833333333334,
+          "answered_but_wrong": 0.28041666666666676,
+          "calls": 2405,
+          "correctness": 0.6516666666666666,
+          "correctness_ci": [
+            0.6323766803494622,
+            0.6704719111533863
+          ],
+          "cost_per_request": 3263.225,
+          "cost_total": 7831740,
+          "digest": "sha256:f6ccc1a1d438b42012f417c5d5638d0d4bef406b67f3632b9c6943d883a3f0bf",
+          "escalations": 0,
+          "p95_latency_us": 693811
+        }
+      },
+      "size": 2400,
+      "spend_versus_null": 1.6730626265733548,
+      "workload": "shift-90"
+    }
+  ],
+  "worst_budget_drift": 5.09699714943965
+}

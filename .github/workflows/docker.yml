@@ -1,0 +1,56 @@
+name: Container
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: container-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  image:
+    name: Build, scan and smoke-test the image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/setup-buildx-action@v4
+
+      - name: Build
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          load: true
+          tags: ai-model-gateway:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Trivy image scan
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: image
+          image-ref: ai-model-gateway:ci
+          severity: HIGH,CRITICAL
+          ignore-unfixed: true
+          exit-code: "1"
+
+      - name: The image does not run as root
+        run: |
+          user="$(docker run --rm --entrypoint id ai-model-gateway:ci -u)"
+          [ "$user" != "0" ] || { echo "the image runs as root"; exit 1; }
+
+      - name: Smoke test
+        # Exercises both faces of the image: the CLI as one-shot runs, and
+        # the HTTP surface as a long-running container polled over a port. It
+        # re-derives the shipped workloads inside the image, asserts the two
+        # policy refusals still refuse, and checks the container does not run
+        # as root and cannot write to /app. Everything else in this pipeline
+        # tests the source tree; this is the only thing that tests what ships.
+        run: bash scripts/smoke-test.sh ai-model-gateway:ci

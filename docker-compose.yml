@@ -1,0 +1,54 @@
+# The gateway's HTTP surface, for a local read of what it does.
+#
+#   docker compose up --build
+#   curl localhost:8000/readyz
+#
+# There are no secrets here and no secret store wired in, because this gateway
+# has nothing to authenticate to: it routes between simulated upstreams. If you
+# add a hosted provider, its key belongs in your secret manager and reaches the
+# container as an environment variable at run time -- never in this file, never
+# in the image, and never in the repository.
+
+services:
+  gateway:
+    build:
+      context: .
+    image: ai-model-gateway:local
+    # The image's entrypoint is `amg` and its default command is `doctor`, so
+    # the subcommand is named here rather than the whole command line.
+    command: ["serve"]
+    ports:
+      # Published on loopback only. This server has no authentication -- see
+      # docs/http.md -- so binding it to every interface would be a decision
+      # nobody made deliberately.
+      - "127.0.0.1:8000:8000"
+    environment:
+      # 0.0.0.0 *inside* the container, so the published port reaches it. What
+      # limits exposure is the host-side bind above, not this.
+      AMG_HOST: "0.0.0.0"
+      AMG_PORT: "8000"
+      AMG_POLICY: "cascade"
+      AMG_CONCURRENCY: "24"
+      AMG_DEADLINE_US: "6000000"
+      # A misspelt AMG_ variable fails at startup rather than being ignored.
+      # See docs/http.md; `extra="forbid"` alone does not catch it.
+    read_only: true
+    tmpfs:
+      # The only writable paths. `read_only` above means a compromised process
+      # cannot modify the code it is running, and nothing here needs to.
+      - /tmp
+      - /app/var
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      # The same check the image declares, restated so compose reports it.
+      # `doctor` verifies the package imports, the simulator is deterministic,
+      # and a replay reproduces its digest.
+      test: ["CMD", "amg", "doctor"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped

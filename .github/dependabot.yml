@@ -1,0 +1,45 @@
+version: 2
+updates:
+  - package-ecosystem: "uv"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    groups:
+      # One PR for routine updates keeps the queue reviewable; security updates
+      # are deliberately left ungrouped so they arrive on their own.
+      python-minor-and-patch:
+        update-types: ["minor", "patch"]
+    commit-message:
+      prefix: "build"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: "ci"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    commit-message:
+      prefix: "build"
+    ignore:
+      # The project pins `requires-python = ">=3.12,<3.13"`, so a base-image
+      # bump to 3.13 or 3.14 produces an image whose interpreter the locked
+      # dependency set refuses to install. Patch updates within 3.12 are still
+      # wanted -- those carry the security fixes -- so only major and minor are
+      # ignored, and moving to a new minor stays a deliberate edit to
+      # pyproject.toml, uv.lock and the Dockerfile together.
+      - dependency-name: "python"
+        update-types:
+          - "version-update:semver-major"
+          - "version-update:semver-minor"

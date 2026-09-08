@@ -1,0 +1,39 @@
+{
+  "converged": true,
+  "divisors": [
+    118,
+    17,
+    4,
+    2,
+    16,
+    6,
+    2,
+    6
+  ],
+  "features": [
+    "chars",
+    "words",
+    "digits",
+    "longest_number",
+    "distinct_words",
+    "punctuation",
+    "braces",
+    "quotes"
+  ],
+  "fitted_on": "sha256:9cf9a12cd276807d880c959756daa8a9f8a5e89bd248fe1a00cc11d2898fb777",
+  "format": 1,
+  "intercept": 9641875,
+  "iterations": 6,
+  "target": "nano_answers_correctly",
+  "weight_scale": 1048576,
+  "weights": [
+    -11372704,
+    -1322357,
+    -881279,
+    -1492622,
+    2027306,
+    2040967,
+    2197588,
+    56977
+  ]
+}

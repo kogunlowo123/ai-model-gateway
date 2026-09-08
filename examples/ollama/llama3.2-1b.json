@@ -1,0 +1,56 @@
+{
+  "by_difficulty": [
+    {
+      "accuracy_per_10k": 4167,
+      "asked": 36,
+      "correct": 15,
+      "difficulty": 1,
+      "errors": 0,
+      "malformed": 0,
+      "malformed_share_of_wrong": 0.0,
+      "median_latency_us": 4166968
+    },
+    {
+      "accuracy_per_10k": 2500,
+      "asked": 36,
+      "correct": 9,
+      "difficulty": 2,
+      "errors": 0,
+      "malformed": 0,
+      "malformed_share_of_wrong": 0.0,
+      "median_latency_us": 3926174
+    },
+    {
+      "accuracy_per_10k": 1667,
+      "asked": 36,
+      "correct": 6,
+      "difficulty": 3,
+      "errors": 0,
+      "malformed": 0,
+      "malformed_share_of_wrong": 0.0,
+      "median_latency_us": 4274551
+    },
+    {
+      "accuracy_per_10k": 2500,
+      "asked": 36,
+      "correct": 9,
+      "difficulty": 4,
+      "errors": 0,
+      "malformed": 1,
+      "malformed_share_of_wrong": 0.037,
+      "median_latency_us": 4123212
+    },
+    {
+      "accuracy_per_10k": 1944,
+      "asked": 36,
+      "correct": 7,
+      "difficulty": 5,
+      "errors": 0,
+      "malformed": 1,
+      "malformed_share_of_wrong": 0.0345,
+      "median_latency_us": 4424424
+    }
+  ],
+  "model": "llama3.2:1b",
+  "system_prompt": "You answer with a single JSON object and nothing else. The object has exactly one key, \"answer\". Do not explain, do not show working, do not use markdown fences."
+}

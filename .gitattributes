@@ -1,0 +1,17 @@
+* text=auto eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+Dockerfile text eol=lf
+Makefile text eol=lf
+# The synthesised corpora and any trained weights. Marked binary explicitly as
+# well as by the *.gz rule below: line-ending normalisation on a gzip member
+# changes the bytes, the regenerated corpus then differs from the committed one,
+# and `amg check` fails on a Linux runner while passing on the machine that
+# wrote it.
+*.jsonl.gz binary
+*.npz binary
+*.png binary
+*.jpg binary
+*.gz binary
+*.onnx binary
+*.safetensors binary
