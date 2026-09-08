@@ -102,6 +102,27 @@ Stated here rather than left to be discovered:
   imply otherwise. It binds to `127.0.0.1` by default; put it behind something
   that does authenticate before exposing it. See [SECURITY.md](../SECURITY.md).
 
+### Running it in a container
+
+The loopback default is right for a process with no authentication, and it is
+also the thing that makes a container look broken: **inside a container,
+`127.0.0.1` is the container's own loopback**, so a published port reaches
+nothing while the server logs a perfectly clean startup. The first CI run of the
+image smoke test failed on exactly that.
+
+Set `AMG_HOST=0.0.0.0` *inside* the container and bind the published port to
+loopback on the *host*:
+
+```yaml
+environment:
+  AMG_HOST: "0.0.0.0"
+ports:
+  - "127.0.0.1:8000:8000"
+```
+
+What limits exposure is the host-side bind, not the in-container one. That is
+what `docker-compose.yml` does and what `scripts/smoke-test.sh` asserts.
+
 ## Configuration is validated by name
 
 `Settings` is prefixed `AMG_`, frozen, and `extra="forbid"`.

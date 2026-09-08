@@ -118,7 +118,17 @@ fi
 rm -f "${gate_output}"
 
 echo "--- the HTTP surface"
-docker run -d --rm --name "${CONTAINER}" -p "${PORT}:8000" "${IMAGE}" serve >/dev/null
+# AMG_HOST=0.0.0.0 is required, and the requirement is the point.
+#
+# The server binds to 127.0.0.1 by default, which is the right default for a
+# process with no authentication -- but inside a container that loopback is the
+# *container's*, so a published port reaches nothing. The first CI run of this
+# smoke test failed on exactly that, with the server reporting a clean startup
+# in its own logs. What limits exposure is the host-side bind below, not the
+# in-container one, which is the same arrangement docker-compose.yml uses.
+docker run -d --rm --name "${CONTAINER}" \
+  -e AMG_HOST=0.0.0.0 \
+  -p "127.0.0.1:${PORT}:8000" "${IMAGE}" serve >/dev/null
 
 ready=0
 for _ in $(seq 1 40); do
@@ -131,6 +141,8 @@ done
 
 if [ "${ready}" -eq 0 ]; then
   fail "the server became healthy within 20 seconds"
+  echo "        (if the log below shows a clean startup, check what it bound to:"
+  echo "         a container that binds 127.0.0.1 is unreachable from a published port)"
   docker logs "${CONTAINER}" 2>&1 | tail -25
 else
   echo "  ok    the server became healthy"

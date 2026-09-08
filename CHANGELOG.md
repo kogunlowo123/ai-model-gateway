@@ -122,6 +122,13 @@ Kept because each was a real defect that a plausible implementation would ship.
   matched no page became a well-formed GitHub URL to a file that does not exist,
   and the checker only looked at links that stayed relative. It now verifies the
   target exists in the repository.
+* **A containerised server that bound to its own loopback.** `AMG_HOST` defaults
+  to `127.0.0.1`, which is right for a process with no authentication and makes
+  a published port reach nothing inside a container — while the server logs a
+  clean startup. Found by the image smoke test on its first CI run, which is the
+  only gate in the pipeline that tests what actually ships. The smoke test and
+  `docker-compose.yml` now set `AMG_HOST=0.0.0.0` and bind the published port to
+  loopback on the *host*, where the limit belongs.
 * **A shadowed name in the resilience gate**, caught by `mypy --strict` once the
   `examples/` directory existed and mypy stopped exiting early on it.
 * **Family-confounded difficulty bands** in the Ollama measurement. Taking the
