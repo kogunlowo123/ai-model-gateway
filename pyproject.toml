@@ -76,7 +76,7 @@ dev = [
   # `amg.upstream.ollama` still speaks httpx 0.x.
   "httpx2>=2.12,<3",
   "ruff>=0.16.6,<0.17",
-  "mypy>=1.19,<2",
+  "mypy>=2.3.1,<3",
   "bandit[toml]>=1.9.4,<2",
   "pip-audit>=2.9,<3",
 ]
