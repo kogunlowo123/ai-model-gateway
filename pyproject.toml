@@ -69,7 +69,7 @@ packages = ["src/amg"]
 dev = [
   "pytest>=9.1,<10",
   "pytest-cov>=7.0,<8",
-  "pytest-randomly>=4.0,<5",
+  "pytest-randomly>=5.0.0,<6",
   "httpx>=0.28,<0.29",
   # starlette 1.6 deprecated driving TestClient with httpx 0.x and raises on
   # it, and this project turns warnings into errors. Both are here because
