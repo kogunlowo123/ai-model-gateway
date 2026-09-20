@@ -213,3 +213,60 @@ Ollama integration talks to a local server and needs no credentials either.
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
+<!-- project-structure -->
+## Project structure
+
+```text
+├── .github/
+├── docs/
+│   ├── ci.md
+│   ├── http.md
+│   ├── reproducibility.md
+│   ├── resilience.md
+│   ├── routing.md
+│   ├── simulator.md
+│   └── upstreams.md
+├── examples/
+│   ├── ollama/
+│   ├── README.md
+│   ├── baseline.json
+│   ├── control.jsonl.gz
+│   ├── estimator.json
+│   ├── fit.jsonl.gz
+│   ├── quickstart.py
+│   ├── resilience_demo.py
+│   └── … 5 more
+├── reports/
+│   ├── evaluation.json
+│   ├── evaluation.md
+│   └── evaluation.xml
+├── scripts/
+│   ├── build_site.py
+│   ├── check-gateway.py
+│   ├── measure-ollama.py
+│   └── smoke-test.sh
+├── security/
+│   ├── audit-exceptions.md
+│   └── audit-ignores.txt
+├── src/
+│   └── amg/
+├── tests/
+│   ├── e2e/
+│   ├── integration/
+│   ├── meta/
+│   ├── security/
+│   ├── unit/
+│   └── conftest.py
+├── .dockerignore
+├── .env.example
+├── .gitattributes
+├── .gitignore
+├── .gitleaks.toml
+… (truncated)
+```
+
+<!-- architecture -->
+## Architecture
+
+![Architecture diagram](docs/architecture.svg)
